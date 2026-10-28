@@ -1,6 +1,6 @@
 // The release preparation script replaces the version with the build digest.
 importScripts('web-config.js');
-const CACHE_NAME = 'hsi-pwa-80e1e1fd66e62a85';
+const CACHE_NAME = 'hsi-pwa-b226c2cc77d524ff';
 const IMAGE_CACHE = 'hsi-public-carousel-v1';
 const API_ORIGIN = new URL(self.HSI_WEB_CONFIG.apiBase).origin;
 const IMAGE_MAX_ENTRIES = 24;
@@ -11,7 +11,7 @@ const imageUpdates = new Map();
 const ROOT = new URL('./', self.location.href);
 const CORE = ['./', 'offline.html', 'manifest.json', 'pwa.js',
   'flutter_bootstrap.js', 'main.dart.js', 'icons/Icon-192.png',
-  'vendor/cropper.min.js', 'vendor/cropper.min.css', 'install.css', 'install.js', 'web-config.js'];
+  'vendor/cropper.min.js', 'vendor/cropper.min.css', 'install.css', 'install.js', 'web-config.js', 'notification-audio.js'];
 
 function isPublicCarousel(request) {
   const url = new URL(request.url);
@@ -84,7 +84,7 @@ self.addEventListener('fetch', (event) => {
   // Never put account responses, uploaded media or JWT-bearing URLs in CacheStorage.
   if (url.search || /^(api|media|admin|ws)(\/|$)/.test(path)) return;
   const isStatic = /^(assets|icons|canvaskit|vendor)\//.test(path) ||
-    /^(|index.html|offline.html|main.dart.js|flutter_bootstrap.js|flutter.js|pwa.js|install.js|install.css|web-config.js|manifest.json|version.json|favicon.png)$/.test(path);
+    /^(|index.html|offline.html|main.dart.js|flutter_bootstrap.js|flutter.js|pwa.js|install.js|install.css|web-config.js|notification-audio.js|manifest.json|version.json|favicon.png)$/.test(path);
   if (!isStatic && request.mode !== 'navigate') return;
   event.respondWith((async () => {
     let cache;
