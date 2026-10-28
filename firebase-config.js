@@ -1,0 +1,1 @@
+self.HSI_FIREBASE_CONFIG = {"apiKey": "AIzaSyAO9a8PXPnTf9QIqGOEq2levT2PYg5RirU", "appId": "1:29718448557:web:7ae842433bf7ed5d46b924", "messagingSenderId": "29718448557", "projectId": "hsi-manager-app"};

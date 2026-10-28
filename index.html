@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="description" content="HSI Manager — votre espace client et agent Hamed Services International.">
+  <meta name="theme-color" content="#0F172A">
+  <!-- Static metadata: messaging crawlers do not execute Flutter/JavaScript. -->
+  <link rel="canonical" href="https://app.hamedservicesinternational.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="HSI Manager">
+  <meta property="og:title" content="HSI Manager — Votre espace HSI">
+  <meta property="og:description" content="Vos échanges, vos services et votre espace personnel. Retrouvez HSI sur Android et iPhone.">
+  <meta property="og:url" content="https://app.hamedservicesinternational.com/">
+  <meta property="og:image" content="https://app.hamedservicesinternational.com/icons/Icon-512.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Logo de HSI Manager — Hamed Services International">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="HSI Manager — Votre espace HSI">
+  <meta name="twitter:description" content="Vos échanges, vos services et votre espace personnel, à portée de main.">
+  <meta name="twitter:image" content="https://app.hamedservicesinternational.com/icons/Icon-512.png">
+  <meta name="twitter:image:alt" content="Logo de HSI Manager">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="HSI Manager">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="vendor/cropper.min.css">
+  <link rel="stylesheet" href="install.css">
+  <script src="vendor/cropper.min.js" defer></script>
+  <title>HSI Manager</title>
+  <style>
+    :root { color-scheme: light; background: #0F172A; font-family: system-ui, sans-serif; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; overscroll-behavior: none; }
+    #flutter-host { position: absolute; top: env(safe-area-inset-top); bottom: env(safe-area-inset-bottom); left: env(safe-area-inset-left); right: env(safe-area-inset-right); max-width: 900px; margin: 0 auto; background: #F8FAFC; }
+    #loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; background: #F8FAFC; color: #0F172A; padding: 24px; text-align: center; z-index: 5; }
+    #loading img { width: 96px; height: 96px; border-radius: 24px; }
+    #loading p { margin: 0; }
+    .spinner { width: 24px; height: 24px; border: 3px solid #DBEAFE; border-top-color: #2563EB; border-radius: 50%; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+    button { font: inherit; min-height: 44px; border: 0; border-radius: 12px; padding: 10px 18px; background: #2563EB; color: white; cursor: pointer; }
+    #install-tip { display: none; position: fixed; bottom: max(12px, env(safe-area-inset-bottom)); left: 12px; right: 12px; max-width: 450px; margin: auto; padding: 16px; border-radius: 16px; background: #0F172A; color: white; z-index: 20; box-shadow: 0 4px 24px #0005; font-size: 14px; }
+    #install-tip button { margin-top: 10px; background: #334155; }
+  </style>
+</head>
+<body>
+  <main id="flutter-host" aria-label="HSI Manager">
+    <div id="loading" role="status" aria-live="polite">
+      <img src="icons/Icon-192.png" alt="HSI Manager">
+      <strong>HSI Manager</strong><div class="spinner"></div>
+      <p id="loading-message">Ouverture de votre espace…</p>
+      <button id="retry" hidden onclick="location.reload()">Réessayer</button>
+    </div>
+  </main>
+  <noscript>Activez JavaScript pour ouvrir HSI Manager.</noscript>
+  <script src="web-config.js"></script>
+  <script src="pwa.js" defer></script>
+  <script src="install.js" defer></script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
