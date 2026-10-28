@@ -1,6 +1,6 @@
 // The release preparation script replaces the version with the build digest.
 importScripts('web-config.js');
-const CACHE_NAME = 'hsi-pwa-b226c2cc77d524ff';
+const CACHE_NAME = 'hsi-pwa-fa77205583ca9bd3';
 const IMAGE_CACHE = 'hsi-public-carousel-v1';
 const API_ORIGIN = new URL(self.HSI_WEB_CONFIG.apiBase).origin;
 const IMAGE_MAX_ENTRIES = 24;
